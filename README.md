@@ -1,3 +1,3 @@
 # deploy-test
-nowoot
+back
 
