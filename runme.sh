@@ -4,7 +4,7 @@ r=$(( $RANDOM % 255 ))
 g=$(( $RANDOM % 255 ))
 b=$(( $RANDOM % 255 ))
 
-cat << EOF > /var/lib/nginx/html/index.html
+cat << EOF > /var/www/html/index.html
 <!DOCTYPE html>
 <html>
 <head>
