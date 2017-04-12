@@ -1,3 +1,3 @@
 # deploy-test
 
-deploy 1
+deploy 2
