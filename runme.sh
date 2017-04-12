@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# test docker builder
+
 r=$(( $RANDOM % 255 ))
 g=$(( $RANDOM % 255 ))
 b=$(( $RANDOM % 255 ))
