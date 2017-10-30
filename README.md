@@ -1,2 +1,2 @@
 # deploy-test change
-Testning GitSync
+Testing private repos
