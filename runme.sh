@@ -25,7 +25,7 @@ cat << EOF > /var/www/html/index.html
 <p>If you see this page, the nginx web server is successfully installed and
 working. Further configuration is required.</p>
 
-<p>Coming to a theater near you in 2018</p>
+<p>Coming to a theater near you in 2020</p>
 <p><em>Thank you for using nginx.</em></p>
 </body>
 </html>
