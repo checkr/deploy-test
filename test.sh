@@ -1,2 +1,2 @@
-echo "success"
-#exit 9
+#echo "success"
+exit 9
