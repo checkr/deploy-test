@@ -4,5 +4,3 @@ append test
 Testing private repos for realsies
 
 Testing the pipeline
-
-DEPLOY
