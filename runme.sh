@@ -22,7 +22,7 @@ cat << EOF > /var/www/html/index.html
 </head>
 <body>
 <h1>Welcome to ${DEPLOYTEST}!</h1>
-<h2>version A</h2>
+<h2>version B</h2>
 <p>If you see this page, the nginx web server is successfully installed and
 working. Further configuration is required.</p>
 
