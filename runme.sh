@@ -32,7 +32,7 @@ working. Further configuration is required.</p>
 </html>
 EOF
 
-if [[ ! -z "$ENV_TEST" ]]; then 
+if [[ -z "$ENV_TEST" ]]; then 
 	echo "Exiting due to lack of environment variable: ENV_TEST" > /dev/stderr
 	exit 123
 fi
