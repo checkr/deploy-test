@@ -32,4 +32,9 @@ working. Further configuration is required.</p>
 </html>
 EOF
 
+if [[ ! -f /etc/secrets/secrets-test.txt ]]; then
+	echo "Exiting due to lack of secrets file: /etc/secrets/secrets-test.txt" > /dev/stderr
+	exit 123
+fi
+
 exec /usr/sbin/nginx -g "daemon off;"
