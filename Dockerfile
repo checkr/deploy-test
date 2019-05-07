@@ -1,14 +1,13 @@
-FROM debian:jessie
+FROM alpine
 MAINTAINER jeremy@checkr.com
 
-ARG DOCKER_SETUP_VAR="test"
-ENV DOCKER_SETUP_VAR=${DOCKER_SETUP_VAR}}
+RUN	apk update && \
+	apk upgrade && \
+	apk add --update openssl nginx bash curl
 
-RUN apt-get update && apt-get install -y openssl nginx bash curl
-RUN echo ${DOCKER_SETUP_VAR} > ./setup_vars.txt
+RUN mkdir -p /run/nginx
 
-ADD runme.sh /runme.sh
-ADD sites-enabled-default /etc/nginx/sites-enabled/default
+ADD runme.sh.alpine /runme.sh
 
 EXPOSE 80
 
