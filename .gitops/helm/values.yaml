@@ -1,0 +1,29 @@
+# Checkr/checkr github repo
+microservice:
+  image: checkr/deploy-test
+  imagePullPolicy: IfNotPresent
+  command: ["/app/docker-entrypoint.sh", "bundle", "exec"]
+
+  # Global environment vars
+  globalEnv:
+  - name: DEPLOYTEST
+    value: foo
+  - name: ENV_TEST
+    value: bar
+
+  # Array of services (kubernetes deployments)
+  deployments:
+  - name: server
+    args: ["puma", "-C", "config/puma.rb"]
+  - name: resque-scheduler
+    args: ["rake", "resque:scheduler"]
+
+  services:
+  - name: deploy-test
+    selector: server
+    ports:
+    - port: 80
+      targetPort: 9393
+
+  # Array of jobs (kubernetes jobs) to be optionally run before any deploys
+  jobs:
