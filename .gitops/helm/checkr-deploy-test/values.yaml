@@ -1,0 +1,30 @@
+microservice:
+  podDefaults:
+    image: checkr/deploy-test
+    imagePullPolicy: IfNotPresent
+    command: ["/app/docker-entrypoint.sh", "bundle", "exec"]
+    env:
+      dev:
+        DEPLOYTEST: foo
+        ENV_TEST: bar
+
+  deployments:
+    server:
+      args: ["puma", "-C", "config/puma.rb"]
+    resque-scheduler:
+      args: ["rake", "resque:scheduler"]
+
+  services:
+    deploy-test:
+      selector: server
+      ports:
+      - port: 80
+        targetPort: 9393
+
+  ingressPrefix: dev
+  ingresses:
+    web-public:
+      hosts:
+      - host: deploy-test.checkrhq-dev.net
+        serviceName: deploy-test
+        servicePort: 80

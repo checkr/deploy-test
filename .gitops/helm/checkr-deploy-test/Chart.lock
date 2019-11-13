@@ -1,0 +1,6 @@
+dependencies:
+- name: helm-chart-checkr-microservice-template
+  repository: https://harbor.checkrhq.net/chartrepo/iie
+  version: 0.8.3
+digest: sha256:9794d363f17008a9101c5df00a17f33598377681d96f9c599219c3ab9e638e5b
+generated: "2019-11-13T08:59:21.03039-08:00"

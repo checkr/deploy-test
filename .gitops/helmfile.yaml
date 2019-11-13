@@ -1,0 +1,12 @@
+# Common config
+templates:
+  default: &default
+    namespace: {{ requiredEnv "DEPLOY_NAMESPACE" }}
+
+releases:
+- name: {{ requiredEnv "DEPLOY_NAMESPACE" }}-checkr-deploy-test
+  <<: *default
+  chart: ./helm/checkr-deploy-test
+  values:
+  - microservice:
+      ingressPrefix: {{ requiredEnv "DEPLOY_NAMESPACE" }}
