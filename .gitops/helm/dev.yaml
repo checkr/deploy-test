@@ -1,8 +1,0 @@
-microservice:
-  ingressPrefix: dev
-  ingresses:
-  - name: web-public
-    hosts:
-    - host: checkr.checkrhq-dev.net
-      serviceName: web
-      servicePort: 80

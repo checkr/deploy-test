@@ -1,0 +1,10 @@
+apiVersion: v1
+description: checkr example helm chart
+name: checkr-deploy-test
+version: 0.1.0
+
+dependencies:
+- name: helm-chart-checkr-microservice-template
+  version: 0.8.x
+  repository: "@checkr"
+  alias: microservice
